@@ -1,0 +1,14 @@
+CricVision is an AI cricket analyst built for Build With AI :: Agentic Premier League, GDG Delhi.
+
+## How it works
+
+The system accepts match video or images and uses the Gemini multimodal API to extract delivery level detail: shot type, delivery type, line, length, and outcome. A four agent pipeline processes each match:
+
+- **Preprocessor** segments and normalises input media
+- **Analyzer** extracts per delivery data via Gemini
+- **Statistician** aggregates into batting, bowling, and partnership summaries
+- **Reporter** generates the final match report with wagon wheel and pitch map visualisations
+
+## Stack
+
+FastAPI backend, React frontend, and a Streamlit app for rapid iteration. All agents run on Gemini 2.5 Flash.

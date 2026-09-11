@@ -1,0 +1,7 @@
+Aegis is a schema first hybrid RAG system. Typed field queries — billing amounts, dates, account numbers — skip semantic search entirely and resolve directly against the parsed schema. Unstructured queries fall through to the standard retrieval path.
+
+## Architecture
+
+PDF bills are parsed into a canonical JSON schema on ingestion. A core orchestrator inspects incoming queries and routes them to one of three domain handlers: billing, weather, and AC control. Only the billing handler touches the schema store; the others operate independently.
+
+The split routing means latency and cost scale with query type rather than treating every request as a retrieval problem.

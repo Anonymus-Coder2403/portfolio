@@ -1,0 +1,17 @@
+Saathi AI is a production voice financial counselor at PayNearby, built on Google Agent Development Kit and deployed to 1,500+ users.
+
+## Architecture
+
+An orchestrator routes incoming voice queries to 6 domain sub agents: digital gold, gold loan, fixed deposits, KYC documents, mutual funds, and PayNearby services. Four of those agents are RAG backed, pulling from ChromaDB knowledge bases to answer domain specific questions. The remaining two handle procedural flows without retrieval.
+
+## Observability and evaluation
+
+The development environment runs a self hosted Opik 2.0.47 instance. A custom LiveTurnTracer captures per turn spans across the 4 RAG experts, feeding structured traces into Opik.
+
+Evaluation uses an LLM as judge approach scoring RAGAS style metrics — faithfulness, answer relevance, context precision, and context recall — via gemini-2.5-flash against a 109 item golden QA dataset. The dataset covers representative queries across all RAG backed domains.
+
+All evaluation data describes dev environment traffic. The production environment does not have Opik or OTLP instrumentation.
+
+## Notes
+
+Source is private employer IP. No public repo.
