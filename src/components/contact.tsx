@@ -46,16 +46,14 @@ export function Contact() {
               <Link
                 href={link.href}
                 {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                className="flex items-center gap-4 rounded-xl border border-[--color-border-subtle] bg-[--color-surface] p-5 transition-all hover:border-[--color-border] hover:bg-[--color-surface-alt]"
+                className="flex items-center gap-4 rounded-2xl bg-bg-elevated p-5 shadow-[0_1px_0_0_rgba(245,243,238,0.04)_inset] transition-transform duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_24px_60px_-24px_rgba(0,0,0,0.65),0_0_0_1px_rgba(245,243,238,0.06)_inset]"
               >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[--color-accent-muted]">
-                  <Icon size={18} className="text-[--color-accent]" />
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-bg">
+                  <Icon size={18} className="text-fg-muted" />
                 </div>
                 <div>
-                  <p className="text-xs text-[--color-text-muted]">{link.label}</p>
-                  <p className="text-sm font-medium text-[--color-text-primary]">
-                    {link.value}
-                  </p>
+                  <p className="font-mono text-xs text-fg-subtle">{link.label}</p>
+                  <p className="text-sm font-medium text-fg">{link.value}</p>
                 </div>
               </Link>
             </MotionFade>

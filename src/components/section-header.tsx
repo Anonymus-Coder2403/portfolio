@@ -9,13 +9,15 @@ interface SectionHeaderProps {
 export function SectionHeader({ title, subtitle, className }: SectionHeaderProps) {
   return (
     <div className={cn('mb-12', className)}>
-      <h2 className="text-2xl font-semibold tracking-tight text-[--color-text-primary]">
+      <p className="mb-3 font-mono text-xs uppercase tracking-[0.25em] text-fg-subtle">
         {title}
+      </p>
+      <h2 className="text-[clamp(1.75rem,3vw,2.5rem)] font-medium tracking-[-0.01em] text-fg">
+        {title}.
       </h2>
       {subtitle && (
-        <p className="mt-2 text-[--color-text-secondary]">{subtitle}</p>
+        <p className="mt-3 text-fg-muted">{subtitle}</p>
       )}
-      <div className="mt-4 h-px w-12 bg-[--color-accent]" />
     </div>
   )
 }

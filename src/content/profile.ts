@@ -17,12 +17,12 @@ export const profile = {
     {
       title: 'AI Engineer Intern',
       company: 'PayNearby',
-      period: 'April 2026 – Present',
-      location: 'Bengaluru',
+      period: '',
+      location: '',
       current: true,
       highlights: [
         'Shipped Saathi AI, a production voice financial counselor on Google Agent Development Kit serving 1,500+ users.',
-        'Architected an orchestrator that routes queries to 6 domain sub agents, 4 of them RAG backed with ChromaDB.',
+        'Architected an orchestrator that routes queries to 6 domain sub agents, 4 of them RAG backed.',
         'Built a self hosted Opik observability pipeline in the development environment, with LLM as judge evaluation scoring RAGAS style metrics via gemini-2.5-flash against a 109 item golden QA dataset. Opik 2.0.47.',
         'Wrote a custom LiveTurnTracer capturing per turn spans across the 4 RAG experts, feeding self hosted Opik.',
       ],

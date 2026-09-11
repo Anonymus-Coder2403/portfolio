@@ -46,28 +46,28 @@ export default async function ProjectPage({ params }: Props) {
   if (!Content) notFound()
 
   return (
-    <div className="min-h-svh bg-[--color-background]">
+    <div className="min-h-svh bg-bg">
       <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
         <Link
           href="/#projects"
-          className="mb-10 inline-flex items-center gap-2 text-sm text-[--color-text-muted] transition-colors hover:text-[--color-text-primary]"
+          className="mb-10 inline-flex items-center gap-2 text-sm text-fg-muted transition-colors hover:text-fg"
         >
           <ArrowLeft size={14} />
           All projects
         </Link>
 
         <header className="mb-10">
-          <h1 className="mb-3 text-3xl font-bold tracking-tight text-[--color-text-primary] sm:text-4xl">
+          <h1 className="mb-3 text-3xl font-medium tracking-[-0.02em] text-fg sm:text-4xl">
             {project.title}
           </h1>
-          <p className="mb-5 text-[--color-text-secondary]">{project.tagline}</p>
+          <p className="mb-5 text-lg text-fg-muted">{project.tagline}</p>
 
           <div className="flex flex-wrap items-center gap-3">
             <div className="flex flex-wrap gap-1.5">
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full bg-[--color-accent-muted] px-2.5 py-0.5 text-xs text-[--color-accent]"
+                  className="rounded-full bg-bg-elevated px-2.5 py-1 font-mono text-[11px] tracking-tight text-fg-muted"
                 >
                   {tag}
                 </span>
@@ -78,7 +78,7 @@ export default async function ProjectPage({ params }: Props) {
                 href={project.repo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-md border border-[--color-border] px-3 py-1.5 text-xs text-[--color-text-secondary] transition-all hover:border-[--color-accent] hover:text-[--color-text-primary]"
+                className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs text-fg-muted transition-all hover:border-fg/20 hover:text-fg"
               >
                 <GithubIcon size={12} />
                 View on GitHub
@@ -87,7 +87,7 @@ export default async function ProjectPage({ params }: Props) {
           </div>
         </header>
 
-        <div className="prose prose-invert max-w-none prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-[--color-text-primary] prose-p:text-[--color-text-secondary] prose-p:leading-relaxed prose-li:text-[--color-text-secondary] prose-strong:text-[--color-text-primary] prose-a:text-[--color-accent] prose-a:no-underline hover:prose-a:underline prose-code:text-[--color-accent] prose-hr:border-[--color-border-subtle]">
+        <div className="prose max-w-none prose-headings:font-medium prose-headings:tracking-tight prose-headings:text-fg prose-p:text-lg prose-p:leading-relaxed prose-p:text-fg-muted prose-li:text-lg prose-li:text-fg-muted prose-strong:text-fg prose-a:text-fg prose-a:no-underline hover:prose-a:underline prose-code:text-fg-muted prose-hr:border-border">
           <Content />
         </div>
       </div>

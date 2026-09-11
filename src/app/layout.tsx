@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Outfit, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { profile } from '@/content/profile'
 import './globals.css'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const outfit = Outfit({
+  variable: '--font-outfit',
   subsets: ['latin'],
 })
 
@@ -57,7 +57,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${outfit.variable} ${geistMono.variable}`}>
       <body>
         {children}
         <Analytics />
