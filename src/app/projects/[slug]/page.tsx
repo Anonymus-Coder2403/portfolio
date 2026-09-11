@@ -73,9 +73,9 @@ export default async function ProjectPage({ params }: Props) {
                 </span>
               ))}
             </div>
-            {project.repo && (
+            {project.github && (
               <Link
-                href={project.repo}
+                href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs text-fg-muted transition-all hover:border-fg/20 hover:text-fg"

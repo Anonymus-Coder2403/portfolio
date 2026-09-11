@@ -1,17 +1,26 @@
-Saathi AI is a production voice financial counselor at PayNearby, built on Google Agent Development Kit and deployed to 1,500+ users.
+## The shape of the problem
 
-## Architecture
+[FILL — Yash writes this section]
 
-An orchestrator routes incoming voice queries to 6 domain sub agents: digital gold, gold loan, fixed deposits, KYC documents, mutual funds, and PayNearby services. Four of those agents are RAG backed, pulling from ChromaDB knowledge bases to answer domain specific questions. The remaining two handle procedural flows without retrieval.
+## Routing
 
-## Observability and evaluation
+An orchestrator routes each query to one of six domain experts, wired as AgentTools
+on a root agent. Four of them are RAG backed. The other two, gold loan and KYC
+documents, have no knowledge base, so no grounding rule fires for them and they
+answer from the model directly.
 
-The development environment runs a self hosted Opik 2.0.47 instance. A custom LiveTurnTracer captures per turn spans across the 4 RAG experts, feeding structured traces into Opik.
+## Evaluating it
 
-Evaluation uses an LLM as judge approach scoring RAGAS style metrics — faithfulness, answer relevance, context precision, and context recall — via gemini-2.5-flash against a 109 item golden QA dataset. The dataset covers representative queries across all RAG backed domains.
+The evaluation stack runs against the development environment. Opik 2.0.47, self
+hosted, collects traces; an LLM as judge scores RAGAS style metrics using
+gemini-2.5-flash against a golden QA dataset of 109 items.
 
-All evaluation data describes dev environment traffic. The production environment does not have Opik or OTLP instrumentation.
+RAGAS style is doing real work in that sentence: the dimensions are RAGAS shaped
+but the RAGAS library is not integrated — the judge is custom.
 
-## Notes
+A custom LiveTurnTracer captures per turn spans across the four RAG backed
+experts.
 
-Source is private employer IP. No public repo.
+## What I would change
+
+[FILL — Yash writes this section]

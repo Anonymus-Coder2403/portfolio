@@ -4,7 +4,12 @@ export type Project = {
   tagline: string
   description: string
   tags: string[]
-  repo: string | null
+  year?: number
+  role?: string
+  cardRole?: string
+  highlights?: string[]
+  hasDeepDive?: boolean
+  github: string | null
   order: number
 }
 
@@ -12,11 +17,19 @@ const projects: Project[] = [
   {
     slug: 'saathi-ai',
     title: 'Saathi AI',
-    tagline: 'Production voice financial counselor on Google Agent Development Kit',
+    tagline: 'Voice financial counselor on Google ADK, with six domain experts and a self hosted evaluation stack',
     description:
-      'A production voice financial counselor on Google ADK serving 1,500+ users, built on 6 domain sub agents with RAG backed knowledge retrieval and a self hosted observability pipeline.',
-    tags: ['Google ADK', 'Gemini', 'RAG', 'ChromaDB', 'Opik', 'FastAPI', 'Python', 'GCP'],
-    repo: null,
+      'A production voice financial counselor on Google ADK serving 1,500+ users, built on 6 domain sub agents with RAG backed knowledge retrieval and a self hosted observability pipeline in the development environment.',
+    tags: ['Google Agent Development Kit', 'Gemini', 'Opik 2.0.47', 'FastAPI', 'Cloud Run'],
+    year: 2026,
+    role: 'AI Engineer Intern, PayNearby',
+    highlights: [
+      'Orchestrator routing queries to six domain experts wired as AgentTools — four are RAG backed, two answer from the model directly.',
+      'Self hosted Opik observability with LLM-as-judge evaluation against a 109 item golden QA dataset (development environment).',
+      'Custom LiveTurnTracer capturing per turn spans across the four RAG backed experts.',
+    ],
+    hasDeepDive: true,
+    github: null,
     order: 1,
   },
   {
@@ -26,7 +39,9 @@ const projects: Project[] = [
     description:
       'A four agent AI cricket analytics system that accepts match video or images and generates delivery level statistics, wagon wheel visualisations, and match reports.',
     tags: ['Google ADK', 'Gemini', 'FastAPI', 'React', 'Streamlit', 'Python'],
-    repo: 'https://github.com/Anonymus-Coder2403/CricVision',
+    year: 2026,
+    hasDeepDive: true,
+    github: 'https://github.com/Anonymus-Coder2403/CricVision',
     order: 2,
   },
   {
@@ -36,7 +51,8 @@ const projects: Project[] = [
     description:
       'A schema first hybrid RAG system that routes typed field queries away from semantic search entirely, with PDF bill parsing and domain specific handlers.',
     tags: ['RAG', 'ChromaDB', 'FastAPI', 'Python', 'LangChain'],
-    repo: 'https://github.com/Anonymus-Coder2403/Aegis',
+    hasDeepDive: true,
+    github: 'https://github.com/Anonymus-Coder2403/Aegis',
     order: 3,
   },
   {
@@ -46,7 +62,8 @@ const projects: Project[] = [
     description:
       'A custom LiveTurnTracer that captures per turn spans across the 4 RAG experts of a Google ADK voice agent, feeding a self hosted Opik instance in the development environment.',
     tags: ['Google ADK', 'Opik', 'Python', 'OpenTelemetry', 'ClickHouse'],
-    repo: null,
+    hasDeepDive: true,
+    github: null,
     order: 4,
   },
 ]

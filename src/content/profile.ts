@@ -1,7 +1,10 @@
 export const profile = {
   name: 'Yash Kumar',
   role: 'AI Engineer',
+  positioning: 'AI Engineer',
+  heroHeadline: 'I build agentic AI systems, and the evaluation that proves they work.',
   tagline: 'Building production agentic AI systems with Google ADK and Gemini.',
+  heroMetrics: ['6 domain sub agents', '109 item golden QA dataset', '1,500+ users'],
   email: 'yashcoder9187@gmail.com',
   github: 'https://github.com/Anonymus-Coder2403',
   linkedin: 'https://linkedin.com/in/yashcoder2403',
@@ -15,28 +18,28 @@ export const profile = {
 
   experience: [
     {
-      title: 'AI Engineer Intern',
       company: 'PayNearby',
-      period: '',
-      location: '',
-      current: true,
-      highlights: [
+      role: 'AI Engineer Intern',
+      dateRange: 'Apr 2026 – Present',
+      tagline: 'Voice financial counselor on Google ADK, serving 1,500+ users.',
+      bullets: [
         'Shipped Saathi AI, a production voice financial counselor on Google Agent Development Kit serving 1,500+ users.',
         'Architected an orchestrator that routes queries to 6 domain sub agents, 4 of them RAG backed.',
         'Built a self hosted Opik observability pipeline in the development environment, with LLM as judge evaluation scoring RAGAS style metrics via gemini-2.5-flash against a 109 item golden QA dataset. Opik 2.0.47.',
-        'Wrote a custom LiveTurnTracer capturing per turn spans across the 4 RAG experts, feeding self hosted Opik.',
+        'Wrote a custom LiveTurnTracer capturing per turn spans across the 4 RAG backed experts, feeding self hosted Opik.',
       ],
+      caseStudies: [{ label: 'Case study', href: '/projects/saathi-ai' }] as { label: string; href: string }[],
     },
     {
-      title: 'AI Engineer Intern',
       company: 'GeniOS',
-      period: 'Former',
-      location: '',
-      current: false,
-      highlights: [
+      role: 'AI Engineer Intern',
+      dateRange: 'Oct – Dec 2025',
+      tagline: 'Founding AI engineer. Agentic reasoning pipeline with LangGraph.',
+      bullets: [
         'Founding AI engineer. Built an agentic reasoning pipeline with LangGraph and LangChain.',
         'Achieved 92% accuracy across 500+ users.',
       ],
+      caseStudies: [] as { label: string; href: string }[],
     },
   ],
 
