@@ -18,15 +18,16 @@ export function ExperienceTimeline() {
           </h2>
         </MotionFade>
 
-        <ol className="relative mt-8 md:mt-12">
+        <div className="relative mt-8 md:mt-12">
           <span
             aria-hidden="true"
             className="pointer-events-none absolute bottom-2 left-2 top-2 w-px bg-border md:left-[10rem]"
           />
 
+          <ol>
           {entries.map((entry, i) => (
-            <MotionFade key={entry.company} delay={0.1 * (i + 1)}>
-              <li className={i === entries.length - 1 ? 'pb-0' : 'pb-14 md:pb-16'}>
+            <li key={entry.company} className={i === entries.length - 1 ? 'pb-0' : 'pb-14 md:pb-16'}>
+              <MotionFade delay={0.1 * (i + 1)}>
                 <div className="md:grid md:grid-cols-[10rem_1fr] md:gap-12">
                   <p className="pl-10 font-mono text-xs uppercase tracking-[0.15em] text-fg-muted md:pl-0 md:pt-1 md:text-right md:text-sm md:normal-case md:tracking-[0.1em]">
                     {entry.dateRange}
@@ -73,10 +74,11 @@ export function ExperienceTimeline() {
                     )}
                   </div>
                 </div>
-              </li>
-            </MotionFade>
+              </MotionFade>
+            </li>
           ))}
-        </ol>
+          </ol>
+        </div>
       </div>
     </section>
   )
