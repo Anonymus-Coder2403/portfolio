@@ -1,6 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "_comment": "next/og writes these extensionless under output: export, so Vercel serves them as application/octet-stream and social crawlers reject them. trailingSlash redirects /icon to /icon/, so both forms need the header. S3 needs its own fix at upload time; this file does nothing there.",
   "headers": [
     {
       "source": "/(opengraph-image|icon|apple-icon)",
