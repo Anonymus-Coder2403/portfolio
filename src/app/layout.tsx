@@ -34,11 +34,21 @@ export const metadata: Metadata = {
     title: `${profile.name} — AI Engineer`,
     description: 'Applied AI engineer specialising in production agentic systems with Google ADK, Gemini, and RAG.',
     siteName: profile.name,
+    images: [
+      {
+        url: `${SITE_URL}/og.png`,
+        width: 1200,
+        height: 630,
+        type: 'image/png',
+        alt: `${profile.name} — AI Engineer`,
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: `${profile.name} — AI Engineer`,
     description: 'Applied AI engineer specialising in production agentic systems with Google ADK, Gemini, and RAG.',
+    images: [`${SITE_URL}/og.png`],
   },
   robots: {
     index: true,
