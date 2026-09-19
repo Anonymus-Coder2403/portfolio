@@ -17,16 +17,16 @@ const projects: Project[] = [
   {
     slug: 'saathi-ai',
     title: 'Saathi AI',
-    tagline: 'Voice financial counselor on Google ADK, with six domain experts and a self hosted evaluation stack',
+    tagline: 'Voice financial counselor on Google ADK, with five domain experts and a self hosted evaluation stack',
     description:
-      'A production voice financial counselor on Google ADK serving 1,500+ users, built on 6 domain sub agents with RAG backed knowledge retrieval and a self hosted observability pipeline in the development environment.',
+      'A production voice financial counselor on Google ADK serving 1,500+ users, built on 5 RAG backed domain sub agents under a root orchestrator and a self hosted observability pipeline in the development environment.',
     tags: ['Google Agent Development Kit', 'Gemini', 'Opik 2.0.47', 'FastAPI', 'Cloud Run'],
     year: 2026,
     role: 'AI Engineer Intern, PayNearby',
     highlights: [
-      'Orchestrator routing queries to six domain experts wired as AgentTools — four are RAG backed, two answer from the model directly.',
+      'A PayNearby root orchestrator routing queries to five domain sub agents wired as AgentTools, each RAG backed.',
       'Self hosted Opik observability with LLM-as-judge evaluation against a 109 item golden QA dataset (development environment).',
-      'Custom LiveTurnTracer capturing per turn spans across the four RAG backed experts.',
+      'Custom LiveTurnTracer capturing per turn spans across the five RAG backed experts.',
     ],
     hasDeepDive: true,
     github: null,
@@ -60,7 +60,7 @@ const projects: Project[] = [
     title: 'Observability Tooling',
     tagline: 'Per turn span tracing across a multi agent ADK voice system',
     description:
-      'A custom LiveTurnTracer that captures per turn spans across the 4 RAG experts of a Google ADK voice agent, feeding a self hosted Opik instance in the development environment.',
+      'A custom LiveTurnTracer that captures per turn spans across the 5 RAG experts of a Google ADK voice agent, feeding a self hosted Opik instance in the development environment.',
     tags: ['Google ADK', 'Opik', 'Python', 'OpenTelemetry', 'ClickHouse'],
     hasDeepDive: true,
     github: null,

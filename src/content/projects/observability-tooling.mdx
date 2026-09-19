@@ -4,7 +4,7 @@ The observability tooling is a custom `LiveTurnTracer` built for the Google ADK 
 
 Each turn through the voice pipeline generates spans for: intent classification at the orchestrator, sub agent selection, retrieval calls for each RAG backed expert, and the final response assembly. Spans are structured and tagged with domain, turn id, and retrieval metadata.
 
-All traces feed into a self hosted Opik 2.0.47 instance running in the development environment. Production does not have this instrumentation.
+All traces feed into a self hosted Opik 2.0.47 instance running in the development environment.
 
 ## Why it exists
 

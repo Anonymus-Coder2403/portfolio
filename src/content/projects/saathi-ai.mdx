@@ -1,13 +1,19 @@
 ## The shape of the problem
 
-[FILL — Yash writes this section]
+Financial questions do not have one answer shape. "What is my gold loan
+interest" is a lookup; "should I move this into a fixed deposit" is advice
+that has to be grounded in real product terms or it is worse than useless.
+A single general model handles the first kind and quietly invents the
+second.
+
+The users are on voice, which removes the two things that usually paper
+over a wrong answer: nobody reads a citation out loud, and nobody scrolls
+back. An answer is either right when it is spoken or it is not.
 
 ## Routing
 
-An orchestrator routes each query to one of six domain experts, wired as AgentTools
-on a root agent. Four of them are RAG backed. The other two, gold loan and KYC
-documents, have no knowledge base, so no grounding rule fires for them and they
-answer from the model directly.
+A PayNearby root orchestrator routes each query to one of five domain sub agents,
+wired as AgentTools, each grounded in its own knowledge base.
 
 ## Evaluating it
 
@@ -18,9 +24,20 @@ gemini-2.5-flash against a golden QA dataset of 109 items.
 RAGAS style is doing real work in that sentence: the dimensions are RAGAS shaped
 but the RAGAS library is not integrated — the judge is custom.
 
-A custom LiveTurnTracer captures per turn spans across the four RAG backed
+A custom LiveTurnTracer captures per turn spans across the five RAG backed
 experts.
 
 ## What I would change
 
-[FILL — Yash writes this section]
+The judge is custom and the metrics are RAGAS shaped rather than RAGAS. That
+was the right call for getting scores at all — the library wants a retrieval
+contract the voice pipeline does not hand it — but it means the dimensions
+are mine. I would want them argued and pinned before the dataset grows past
+109 items, because a bigger set scored on unexamined dimensions is just a
+more expensive way to be confident.
+
+The second thing is resolution. The tracer captures a span per turn, which
+answers "which expert answered and how long did it take" but not "why did the
+orchestrator pick that one." Routing decisions are the part I still reason
+about from transcripts rather than from traces, and that is the gap I would
+close next.
