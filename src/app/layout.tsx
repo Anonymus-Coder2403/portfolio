@@ -26,6 +26,7 @@ export const metadata: Metadata = {
   authors: [{ name: profile.name }],
   creator: profile.name,
   metadataBase: SITE_ORIGIN,
+  alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
     locale: 'en_US',

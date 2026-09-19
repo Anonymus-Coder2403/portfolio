@@ -8,6 +8,9 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
+      // Next writes RSC payload dumps beside every page: full content
+      // duplicates of the HTML, published under Allow: /.
+      disallow: ['/*__next*', '/*index.txt$'],
     },
     sitemap: `${SITE_URL}/sitemap.xml`,
   }

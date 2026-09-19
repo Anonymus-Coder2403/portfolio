@@ -9,6 +9,7 @@ import SaathiAIMDX from '@/content/projects/saathi-ai.mdx'
 import CricVisionMDX from '@/content/projects/cricvision.mdx'
 import AegisMDX from '@/content/projects/aegis.mdx'
 import ObservabilityMDX from '@/content/projects/observability-tooling.mdx'
+import { SITE_URL } from '@/lib/site'
 
 const contentMap: Record<string, React.ComponentType> = {
   'saathi-ai': SaathiAIMDX,
@@ -34,6 +35,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: project.title,
     description: project.description,
+    alternates: { canonical: `/projects/${slug}/` },
+    openGraph: {
+      type: 'article',
+      url: `${SITE_URL}/projects/${slug}/`,
+      title: project.title,
+      description: project.description,
+    },
   }
 }
 

@@ -7,20 +7,14 @@ export const dynamic = 'force-static'
 export default function sitemap(): MetadataRoute.Sitemap {
   const projects = getAllProjects()
 
+  // Google ignores changefreq and priority. lastmod is omitted rather than
+  // stamped with build time, which Google discounts as unverifiable.
   const projectRoutes: MetadataRoute.Sitemap = projects.map((p) => ({
-    url: `${SITE_URL}/projects/${p.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly',
-    priority: 0.7,
+    url: `${SITE_URL}/projects/${p.slug}/`,
   }))
 
   return [
-    {
-      url: SITE_URL,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 1,
-    },
+    { url: `${SITE_URL}/` },
     ...projectRoutes,
   ]
 }
