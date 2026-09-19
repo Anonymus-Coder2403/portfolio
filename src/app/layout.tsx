@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { profile } from '@/content/profile'
 import './globals.css'
+import { SITE_ORIGIN, SITE_URL } from '@/lib/site'
 
 const outfit = Outfit({
   variable: '--font-outfit',
@@ -24,11 +25,11 @@ export const metadata: Metadata = {
   keywords: ['AI Engineer', 'Google ADK', 'Agentic AI', 'RAG', 'Gemini', 'LangChain', 'FastAPI', 'Python'],
   authors: [{ name: profile.name }],
   creator: profile.name,
-  metadataBase: new URL('https://yashkumar.dev'),
+  metadataBase: SITE_ORIGIN,
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://yashkumar.dev',
+    url: SITE_URL,
     title: `${profile.name} — AI Engineer`,
     description: 'Applied AI engineer specialising in production agentic systems with Google ADK, Gemini, and RAG.',
     siteName: profile.name,
