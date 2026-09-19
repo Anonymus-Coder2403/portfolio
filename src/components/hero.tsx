@@ -7,23 +7,24 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-svh items-center px-4 pt-28 pb-20 sm:px-6 md:px-10 lg:px-12"
+      className="relative flex min-h-svh items-center px-6 pt-28 pb-20 md:px-10 lg:px-12"
     >
-      <div className="mx-auto w-full max-w-5xl">
+      <div className="mx-auto grid w-full max-w-6xl gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,360px)] md:items-center md:gap-16">
+        <div>
         <MotionFade>
-          <p className="font-mono text-xs font-medium uppercase tracking-[0.25em] text-fg-muted">
+          <p className="font-mono text-xs font-medium uppercase tracking-[0.25em] text-fg">
             {profile.name} · {profile.role}
           </p>
         </MotionFade>
 
         <MotionFade delay={0.1}>
-          <h1 className="mt-6 max-w-4xl text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[1.05] tracking-[-0.02em] text-fg">
+          <h1 className="mt-6 text-balance text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[1.05] tracking-[-0.02em] text-fg">
             {profile.heroHeadline}
           </h1>
         </MotionFade>
 
         <MotionFade delay={0.2}>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-fg-muted">
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-fg-muted md:text-xl">
             {profile.tagline}
           </p>
         </MotionFade>
@@ -32,7 +33,7 @@ export function Hero() {
           <div className="mt-10 flex flex-wrap items-center gap-3">
             <Link
               href="#projects"
-              className="inline-flex items-center rounded-full bg-fg px-5 py-2.5 text-sm font-medium text-bg transition-colors hover:bg-accent"
+              className="inline-flex items-center rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-bg transition-colors hover:bg-fg"
             >
               View work
             </Link>
@@ -70,6 +71,19 @@ export function Hero() {
               </li>
             ))}
           </ul>
+        </MotionFade>
+        </div>
+
+        <MotionFade delay={0.5} className="order-first md:order-last">
+          <div className="relative aspect-[4/5] w-full max-w-[280px] overflow-hidden rounded-2xl bg-bg-elevated md:max-w-none">
+            <img
+              src="/yash.jpg"
+              alt={`${profile.name}, speaking at the Airtribe x Render Ship Room hackathon`}
+              width={1400}
+              height={933}
+              className="size-full object-cover object-center"
+            />
+          </div>
         </MotionFade>
       </div>
     </section>
