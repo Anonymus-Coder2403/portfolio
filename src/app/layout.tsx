@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import { Outfit, Geist_Mono } from 'next/font/google'
 import { profile } from '@/content/profile'
+import 'lenis/dist/lenis.css'
 import './globals.css'
 import { SITE_ORIGIN, SITE_URL } from '@/lib/site'
+import { SmoothScroll } from '@/components/smooth-scroll'
 
 const outfit = Outfit({
   variable: '--font-outfit',
@@ -59,7 +61,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${outfit.variable} ${geistMono.variable}`}>
       <body>
-        {children}
+        <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
   )
