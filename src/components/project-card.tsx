@@ -14,7 +14,7 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
-  const { slug, title, tagline, year, role, cardRole, tags, highlights, hasDeepDive, github } =
+  const { slug, title, tagline, year, role, cardRole, tags, highlights, hasDeepDive, github, linkedin } =
     project
 
   const [chipsExpanded, setChipsExpanded] = useState(false)
@@ -102,7 +102,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         )}
       </ul>
 
-      {(hasDeepDive || github) && (
+      {(hasDeepDive || github || linkedin) && (
         <div className="relative z-10 mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
           {hasDeepDive && (
             <Link
@@ -122,6 +122,17 @@ export function ProjectCard({ project }: ProjectCardProps) {
             >
               <GithubIcon size={16} />
               GitHub
+            </a>
+          )}
+          {linkedin && (
+            <a
+              href={linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-fg-muted transition-colors hover:text-fg"
+            >
+              View project
+              <ArrowUpRight className="size-4" />
             </a>
           )}
         </div>

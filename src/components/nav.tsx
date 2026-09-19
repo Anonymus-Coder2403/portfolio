@@ -11,8 +11,9 @@ type NavLink = { label: string; href: string }
 
 const SECTIONS: NavLink[] = [
   { label: 'Experience', href: '/#experience' },
-  { label: 'Projects',   href: '/#projects'   },
-  { label: 'Skills',     href: '/#skills'     },
+  { label: 'Projects',     href: '/#projects'     },
+  { label: 'Achievements', href: '/#achievements' },
+  { label: 'Skills',       href: '/#skills'       },
 ]
 
 const CONTACT_HREF = '/#contact'

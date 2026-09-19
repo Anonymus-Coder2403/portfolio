@@ -10,6 +10,7 @@ export type Project = {
   highlights?: string[]
   hasDeepDive?: boolean
   github: string | null
+  linkedin?: string
   order: number
 }
 
@@ -22,7 +23,7 @@ const projects: Project[] = [
       'A production voice financial counselor on Google ADK serving 1,500+ users, built on 5 RAG backed domain sub agents under a root orchestrator and a self hosted observability pipeline in the development environment.',
     tags: ['Google Agent Development Kit', 'Gemini', 'Opik 2.0.47', 'FastAPI', 'Cloud Run'],
     year: 2026,
-    role: 'AI Engineer Intern, PayNearby',
+    role: 'AI Engineer, PayNearby',
     highlights: [
       'A PayNearby root orchestrator routing queries to five domain sub agents wired as AgentTools, each RAG backed.',
       'Self hosted Opik observability with LLM-as-judge evaluation against a 109 item golden QA dataset (development environment).',
@@ -42,6 +43,7 @@ const projects: Project[] = [
     year: 2026,
     hasDeepDive: true,
     github: 'https://github.com/Anonymus-Coder2403/CricVision',
+    linkedin: 'https://www.linkedin.com/posts/yashcoder2403_bwaiapldlehi-geminiai-fastapi-activity-7457441495478902784-1iq6',
     order: 2,
   },
   {
