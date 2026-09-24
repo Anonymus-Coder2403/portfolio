@@ -1,0 +1,81 @@
+@import 'tailwindcss';
+
+/* ---------------------------------------------------------------------------
+ * Design tokens — spec: CLAUDE.md §Design system
+ * -------------------------------------------------------------------------- */
+:root {
+  --bg:          #050505;
+  --bg-elevated: #0d0d0d;
+  --fg:          #f5f3ee;
+  --fg-muted:    #a8a39c;
+  --fg-subtle:   #6a6660;
+  --accent:      #ffffff;
+  --border:      rgba(245, 243, 238, 0.08);
+  --glow:        rgba(245, 243, 238, 0.04);
+}
+
+@theme {
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --color-bg:          var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-fg:          var(--fg);
+  --color-fg-muted:    var(--fg-muted);
+  --color-fg-subtle:   var(--fg-subtle);
+  --color-accent:      var(--accent);
+  --color-border:      var(--border);
+  --color-glow:        var(--glow);
+}
+
+/* ---------------------------------------------------------------------------
+ * Base
+ * -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+}
+
+::selection {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 2px;
+}
+
+code, kbd, pre, samp {
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

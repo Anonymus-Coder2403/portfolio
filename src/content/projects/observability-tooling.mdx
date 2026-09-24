@@ -1,0 +1,11 @@
+The observability tooling is a custom `LiveTurnTracer` built for the Google ADK voice agent at PayNearby.
+
+## What it traces
+
+Each turn through the voice pipeline generates spans for: intent classification at the orchestrator, sub agent selection, retrieval calls for each RAG backed expert, and the final response assembly. Spans are structured and tagged with domain, turn id, and retrieval metadata.
+
+All traces feed into a self hosted Opik 2.0.47 instance running in the development environment.
+
+## Why it exists
+
+Google ADK's default tracing does not expose per turn span boundaries that map to domain sub agents. The custom tracer adds that resolution, making it possible to see which expert answered a query, what it retrieved, and how long each step took.
